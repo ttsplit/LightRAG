@@ -1,9 +1,9 @@
 from dataclasses import dataclass, field
-from typing import TypedDict, Union, Literal, Generic, TypeVar
+from typing import Generic, Literal, TypedDict, TypeVar, Union
 
 import numpy as np
 
-from .utils import EmbeddingFunc
+from lightrag.utils import EmbeddingFunc
 
 TextChunkSchema = TypedDict(
     "TextChunkSchema",

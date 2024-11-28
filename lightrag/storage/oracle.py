@@ -1,20 +1,17 @@
+import array
 import asyncio
 
 # import html
 # import os
 from dataclasses import dataclass
 from typing import Union
+
 import numpy as np
-import array
-
-from ..utils import logger
-from ..base import (
-    BaseGraphStorage,
-    BaseKVStorage,
-    BaseVectorStorage,
-)
-
 import oracledb
+
+from lightrag.utils import logger
+
+from .base import BaseGraphStorage, BaseKVStorage, BaseVectorStorage
 
 
 class OracleDB:
@@ -294,7 +291,6 @@ class OracleVectorDBStorage(BaseVectorStorage):
 
     async def upsert(self, data: dict[str, dict]):
         """向向量数据库中插入数据"""
-        pass
 
     async def index_done_callback(self):
         pass
