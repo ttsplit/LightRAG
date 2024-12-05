@@ -1,6 +1,7 @@
 import os
 from lightrag import LightRAG, QueryParam
 from lightrag.llm import gpt_4o_mini_complete
+from lightrag.storage import Neo4JStorage
 
 
 #########
@@ -17,7 +18,7 @@ if not os.path.exists(WORKING_DIR):
 rag = LightRAG(
     working_dir=WORKING_DIR,
     llm_model_func=gpt_4o_mini_complete,  # Use gpt_4o_mini_complete LLM model
-    kg="Neo4JStorage",
+    graph_storage_cls=Neo4JStorage,
     log_level="INFO",
     # llm_model_func=gpt_4o_complete  # Optionally, use a stronger model
 )

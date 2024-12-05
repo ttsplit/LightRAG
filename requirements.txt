@@ -13,6 +13,7 @@ openai
 oracledb
 pyvis
 tenacity
+pymilvus
 # lmdeploy[all]
 
 # LLM packages

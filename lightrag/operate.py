@@ -19,7 +19,7 @@ from .utils import (
     process_combine_contexts,
     locate_json_string_body_from_string,
 )
-from .base import (
+from lightrag.storage.base import (
     BaseGraphStorage,
     BaseKVStorage,
     BaseVectorStorage,
