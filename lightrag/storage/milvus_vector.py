@@ -63,8 +63,6 @@ class MilvusVectorStorage(BaseVectorStorage):
         for i, d in enumerate(list_data):
             d["vector"] = embeddings[i].tolist()
 
-        logger.info(f"Milvus list_data: {list_data}")
-
         try:
             results = self._client.upsert(
                 collection_name=self.namespace,
@@ -99,7 +97,7 @@ class MilvusVectorStorage(BaseVectorStorage):
             return [{
                 "id": hit['id'],
                 "distance": hit['distance'],
-                **hit
+                **hit['entity']
             } for hit in results[0]]
 
         except Exception as e:

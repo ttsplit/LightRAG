@@ -26,7 +26,7 @@ from .utils import (
     logger,
     set_logger,
 )
-from storage.base import (
+from .storage.base import (
     BaseGraphStorage,
     BaseKVStorage,
     BaseVectorStorage,
@@ -34,7 +34,7 @@ from storage.base import (
     QueryParam,
 )
 
-from storage import (
+from .storage import (
     JsonKVStorage,
     NanoVectorDBStorage,
     NetworkXStorage,
