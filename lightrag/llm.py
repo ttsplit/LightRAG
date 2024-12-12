@@ -28,7 +28,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 import torch
 from pydantic import BaseModel, Field
 from typing import List, Dict, Callable, Any
-from .base import BaseKVStorage
+from .storage.base import BaseKVStorage
 from .utils import compute_args_hash, wrap_embedding_func_with_attrs
 
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
