@@ -455,8 +455,6 @@ async def kg_query(
     kw_prompt_temp = PROMPTS["keywords_extraction"]
     kw_prompt = kw_prompt_temp.format(query=query, examples=examples)
     result = await use_model_func(kw_prompt)
-    logger.info("kw_prompt result:")
-    print(result)
     try:
         json_text = locate_json_string_body_from_string(result)
         keywords_data = json.loads(json_text)

@@ -77,7 +77,6 @@ class MilvusVectorStorage(BaseVectorStorage):
         try:
             logger.info(f"Querying {self.namespace} with query: {query}")
             embedding = await self.embedding_func([query])
-            logger.info(f"Query embedding: {embedding}")
             results = self._client.search(
                 collection_name=self.namespace,
                 data=embedding.tolist(),
@@ -92,7 +91,7 @@ class MilvusVectorStorage(BaseVectorStorage):
             if not results or not results[0]:
                 return []
             
-            logger.info(f"Query results: {results[0]}")
+            logger.debug(f"Query results: {results[0]}")
 
             return [{
                 "id": hit['id'],
